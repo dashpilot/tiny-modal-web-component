@@ -10,9 +10,11 @@ onMount(async () => {
       let target = ev.target;
       let id = target.getAttribute('data-show');
       document.querySelectorAll('tiny-modal').forEach((el) => {
-        el.style.display = 'block';
+        el.style.display = 'inline-block';
       });
-      document.querySelector('#' + id).setAttribute('show', true);
+      setTimeout(() => {
+        document.querySelector('#' + id).setAttribute('show', true);
+      }, 15)
     })
   })
 });
