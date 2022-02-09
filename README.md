@@ -10,8 +10,8 @@ Lightweight modal web component made with Svelte
 
 Grab the files from CDN:
 ```
-<script src="https://cdn.jsdelivr.net/gh/dashpilot/tiny-modal-web-component@1.0.0/dist/assets/index.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/dashpilot/tiny-modal-web-component@1.0.0/dist/assets/vendor.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/dashpilot/tiny-modal-web-component@1.0.1/dist/assets/index.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/dashpilot/tiny-modal-web-component@1.0.1/dist/assets/vendor.js"></script>
 ```
 
 Then just slot the modal-content within the web component, like so:
