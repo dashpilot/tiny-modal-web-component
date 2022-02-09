@@ -60,7 +60,7 @@ cursor: pointer;
 }
 
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1100px) {
   .screen {
     height: 100%;
   }
