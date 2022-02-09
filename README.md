@@ -1,6 +1,6 @@
 # tiny-modal-web-component
 
-Lightweight and zero-dependancy modal web component made with Svelte
+Lightweight modal web component made with Svelte
 
 ## Demo
 
