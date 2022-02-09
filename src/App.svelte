@@ -1,7 +1,21 @@
 <svelte:options tag="tiny-modal" />
 
 <script>
+import { onMount } from 'svelte';
 export let show = $$props['show'];
+
+onMount(async () => {
+  document.querySelectorAll('[data-show]').forEach((el) => {
+    el.addEventListener('click', (ev) => {
+      let target = ev.target;
+      let id = target.getAttribute('data-show');
+      document.querySelectorAll('tiny-modal').forEach((el) => {
+        el.style.display = 'block';
+      });
+      document.querySelector('#' + id).setAttribute('show', true);
+    })
+  })
+});
 </script>
 
 <main>
@@ -37,11 +51,11 @@ cursor: pointer;
   height: 100%;
   z-index: 999;
   background-color: rgba(0, 0, 0, 0.5);
-  transition: opacity 0.5s;
-  opacity: 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: opacity 0.5s;
+  opacity: 0;
 }
 
 .backdrop.visible {

@@ -61,6 +61,7 @@
       text-align: center;
     }
 
+
     tiny-modal {
       display: none;
     }
@@ -75,7 +76,6 @@
     <h1>Tiny Modal</h1>
     <p>A tiny modal web component</p>
 
-
     <button class="btn btn-primary" data-show="modal1">Launch Modal</button>
   </div>
 
@@ -84,19 +84,6 @@
   </tiny-modal>
   <script type="module" src="/src/main.js"></script>
 
-
-  <script>
-    document.querySelectorAll('[data-show]').forEach((el) => {
-      el.addEventListener('click', (ev) => {
-        let target = ev.target;
-        let id = target.getAttribute('data-show');
-        document.querySelectorAll('tiny-modal').forEach((el) => {
-          el.style.display = 'block';
-        });
-        document.querySelector('#' + id).setAttribute('show', true);
-      })
-    })
-  </script>
 
 </body>
 
