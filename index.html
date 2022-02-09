@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Svelte + Vite App</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@200;300;400;600;700&display=swap');
+
+    body {
+      font-family: "Heebo", sans-serif;
+    }
+
+    h1 {
+      box-sizing: border-box;
+      clear: both;
+      color: black;
+      font-family: "Heebo", sans-serif;
+      font-size: 48px;
+      font-weight: 700;
+      letter-spacing: -.1px;
+      line-height: 58px;
+      margin: 0 0 5px;
+      text-align: center;
+
+    }
+
+    p {
+      box-sizing: border-box;
+      color: #575e86;
+      font-family: "Heebo", sans-serif;
+      font-size: 20px;
+      letter-spacing: -.1px;
+      line-height: 30px;
+      margin: 0 0 50px;
+      opacity: 1;
+      text-align: center;
+    }
+
+    .btn.btn-primary {
+      padding: 15px 20px;
+      border-radius: 8px;
+      background-color: #656CF6;
+      font-weight: 400;
+      font-size: 18px;
+      border: 0;
+      color: white;
+      cursor: pointer;
+    }
+
+    .btn.btn-primary:hover {
+      background-color: #7d82f1;
+    }
+
+    .container {
+      width: 320px;
+      margin: 80px auto;
+      text-align: center;
+    }
+  </style>
+
+
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>Tiny Modal</h1>
+    <p>A tiny modal web component</p>
+
+
+    <button class="btn btn-primary" data-show="modal1">Launch Modal</button>
+  </div>
+
+  <tiny-modal show="false" id="modal1">This is some modal content</tiny-modal>
+  <script type="module" src="/src/main.js"></script>
+
+
+  <script>
+    document.querySelectorAll('[data-show]').forEach((el) => {
+      el.addEventListener('click', (ev) => {
+        let target = ev.target;
+        let id = target.getAttribute('data-show');
+        document.querySelector('#' + id).setAttribute('show', true);
+      })
+    })
+  </script>
+
+</body>
+
+</html>

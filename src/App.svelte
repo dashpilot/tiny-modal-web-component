@@ -1,0 +1,76 @@
+<svelte:options tag="tiny-modal" />
+
+<script>
+export let show = $$props['show'];
+</script>
+
+<main>
+
+
+  <div class="backdrop visible" class:visible="{show === 'true'}">
+    <div class="close" on:click="{() => show = false}">&times;</div>
+    <div class="screen"><div class="content"><slot></slot></div></div>
+  </div>
+
+
+</main>
+
+<style>
+.close{
+position: fixed;
+top: 10px;
+right: 20px;
+color: white;
+font-size: 40px;
+cursor: pointer;
+}
+
+.close:hover{
+  color: #CCC;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: opacity 0.5s;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.backdrop.visible {
+  left: 0;
+  opacity: 1;
+}
+
+.screen {
+  max-width: 1000px;
+  width: 1000px;
+  min-height: 600px;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 20px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .screen {
+    height: 100%;
+  }
+  .content{
+    padding: 50px 20px;
+  }
+  .close{
+  color: black;
+  }
+  .close:hover{
+    color: #333;
+  }
+}
+</style>
