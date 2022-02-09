@@ -60,6 +60,22 @@
       margin: 80px auto;
       text-align: center;
     }
+
+    .modal-content {
+      opacity: 0;
+      animation: fadein 2s;
+      animation-iteration-count: 1;
+    }
+
+    @keyframes fadein {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
   </style>
 
 
@@ -75,7 +91,9 @@
     <button class="btn btn-primary" data-show="modal1">Launch Modal</button>
   </div>
 
-  <tiny-modal show="false" id="modal1">This is some modal content</tiny-modal>
+  <tiny-modal show="false" id="modal1">
+    <div class="modal-content">This is some modal content</div>
+  </tiny-modal>
   <script type="module" src="/src/main.js"></script>
 
 

@@ -59,6 +59,7 @@ cursor: pointer;
   padding: 20px;
 }
 
+
 @media only screen and (max-width: 1000px) {
   .screen {
     height: 100%;
